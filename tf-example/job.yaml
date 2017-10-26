@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
         - name: tf-example-container
-          image: bnavetta/tensorflow-example:db1f652-dirty
+          image: bnavetta/tensorflow-example:0629e94
           resources:
             limits:
               alpha.kubernetes.io/nvidia-gpu: 1
