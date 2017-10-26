@@ -4,8 +4,6 @@ kind: Pod
 metadata:
   name: gpu-test
 spec:
-  nodeSelector:
-    kubernetes.io/hostname: serrep2
   restartPolicy: OnFailure
   containers:
     - name: gpu-container
