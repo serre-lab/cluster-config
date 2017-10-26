@@ -1,0 +1,24 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tf-example
+spec:
+  template:
+    metadata:
+      name: tf-example
+    spec:
+      containers:
+        - name: tf-example-container
+          image: bnavetta/tensorflow-example:db1f652-dirty
+          resources:
+            limits:
+              alpha.kubernetes.io/nvidia-gpu: 1
+          volumeMounts:
+            - mountPath: /usr/local/nvidia
+              name: nvidia-drivers
+      restartPolicy: OnFailure
+      volumes:
+        - name: nvidia-drivers
+          hostPath:
+            path: /var/lib/kubernetes-nvidia-drivers/drivers
