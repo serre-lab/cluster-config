@@ -1,0 +1,1 @@
+disk_free_percentage = node_filesystem_avail / node_filesystem_size
